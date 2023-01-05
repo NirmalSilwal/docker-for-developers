@@ -1,26 +1,26 @@
-import express from 'express';
-import {MongoClient} from 'mongodb';
+import express from "express";
+import { MongoClient } from "mongodb";
 
 const app = express();
 const PORT = 4000;
-const url = 'mongodb://localhost:27017';
+const url = "mongodb://localhost:27017";
 const client = new MongoClient(url);
 
 // Database Name
-const dbName = 'testDB';
+const dbName = "testDB";
 
 async function main() {
   await client.connect();
   const db = client.db(dbName);
-  const collection = db.collection('documents');
+  const collection = db.collection("documents");
 
-  return 'done.';
+  return "done.";
 }
 
-app.get('/', (req, res) => {
-    res.json("I love docker!");
+app.get("/", (req, res) => {
+  res.json("I love docker! let's learn brother, hoina!");
 });
 
 app.listen(PORT, () => {
-    console.log('Your server is running on PORT:',PORT);
+  console.log("Nirmal, Your server is running on PORT:", PORT);
 });
